@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Container, Spinner } from "react-bootstrap";
+
 import journeyContext from "../context/journeyContext";
 import BusesResults from "./BusesResults";
 

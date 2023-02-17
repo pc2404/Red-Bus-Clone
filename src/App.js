@@ -1,13 +1,14 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
-import { Toaster } from "react-hot-toast";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import React, { useState } from "react";
-import { Search } from "./components/Search";
 import SearchResults from "./components/SearchResults";
 import Home from "./components/Home";
 import journeyContext from "./context/journeyContext";
+import SeatSelection from "./components/SeatSelection";
+import Journey from "./components/Journey";
+import Login from "./components/Login";
 
 const App = () => {
   const [from, setFrom] = useState("");
@@ -19,12 +20,17 @@ const App = () => {
         value={{ from: from, to: to, setFrom: setFrom, setTo: setTo }}
       >
         <BrowserRouter>
-          <Toaster />
-          <Navbar />
-          <Search />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/results" element={<SearchResults />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Journey Component={Home} />} />
+            <Route
+              path="/results"
+              element={<Journey Component={SearchResults} />}
+            />
+            <Route
+              path="/book-seat"
+              element={<Journey Component={SeatSelection} />}
+            />
           </Routes>
         </BrowserRouter>
       </journeyContext.Provider>
