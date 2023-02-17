@@ -1,7 +1,20 @@
 import React from "react";
 
 const BusesResults = (props) => {
-  return <div className="bg-warning m-3 p-3">{props.bus.busName}</div>;
+  return (
+    <div className="row bg-light m-3 p-2 text-center d-flex justify-content-between align-items-center">
+      <h4 className="col-md-3">{props.bus.busName}</h4>
+      <div className="d-flex flex-column col-md-3">
+        <div>DEPARTURE</div>
+        <h4>{props.bus.departureTime}</h4>
+      </div>
+      <div className="d-flex flex-column col-md-3">
+        <div>ARRIVAL</div>
+        <h4>{props.bus.arrivalTime}</h4>
+      </div>
+      <h4 className="col-md-3">{props.bus.ticketPrice}/-</h4>
+    </div>
+  );
 };
 
 export default BusesResults;

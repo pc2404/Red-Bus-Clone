@@ -13,7 +13,7 @@ function RedBusNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Bus Tickets</Nav.Link>
+            <Navbar.Brand href="#">RedBus</Navbar.Brand>
           </Nav>
           <Nav>
             <NavDropdown title={<FaUser />} id="collasible-nav-dropdown">

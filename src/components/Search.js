@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Container, InputGroup, Form, Button } from "react-bootstrap";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { TbBuildingSkyscraper } from "react-icons/tb";
 import { MdOutlineDateRange } from "react-icons/md";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import journeyContext from "../context/journeyContext";
 
 export const Search = () => {
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
   const [date, setDate] = useState();
   const navigate = useNavigate();
+  const { from, setFrom, to, setTo } = useContext(journeyContext);
 
   function exchangeToFrom() {
     const fromVal = from;
