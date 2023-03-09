@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Navbar } from "react-bootstrap";
+import Navbar from "./Navbar";
 import { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import journeyContext from "../context/journeyContext";
